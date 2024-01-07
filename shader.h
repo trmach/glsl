@@ -83,9 +83,12 @@ class Shader {
 
     void setUniform3f(const std::string &name, float v1, float v2, float v3) const {
       glUniform3f(glGetUniformLocation(ID, name.c_str()), v1, v2, v3);
-      
-
     }
+
+    void setRefUniform3f(const std::string &name, float * v1, float * v2, float * v3) const {
+      glUniform3f(glGetUniformLocation(ID, name.c_str()), *v1, *v2, *v3);
+    }
+
 
   private:
 
